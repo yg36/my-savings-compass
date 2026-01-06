@@ -1,73 +1,59 @@
-# Welcome to your Lovable project
+# Goal-Based Savings Planner
 
-## Project info
+A beautiful, client-side web application for tracking your savings goals with real-time currency conversion between INR and USD.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Features
 
-## How can I edit this code?
+- **Add Savings Goals** - Create goals with name, target amount, and currency (INR/USD)
+- **Progress Tracking** - Visual progress bars showing how close you are to each goal
+- **Contributions** - Add contributions to goals with date tracking
+- **Live Exchange Rates** - Fetches real-time INR ↔ USD rates from exchangerate-api
+- **Currency Conversion** - See goal amounts converted to the alternate currency
+- **Summary Dashboard** - Overview of total targets, savings, and overall progress
+- **Persistent Storage** - All data saved in localStorage
+- **Responsive Design** - Works beautifully on desktop and mobile
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- React 18 + TypeScript
+- Vite (build tool)
+- Tailwind CSS (styling)
+- Lucide React (icons)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-**Use your preferred IDE**
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+3. Open http://localhost:5173 in your browser
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Project Structure
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/
+│   ├── AddGoalForm.tsx      # Form to create new goals
+│   ├── ContributionModal.tsx # Modal for adding contributions
+│   ├── EmptyState.tsx       # Shown when no goals exist
+│   ├── GoalCard.tsx         # Individual goal display card
+│   └── SummaryBanner.tsx    # Top summary with totals
+├── hooks/
+│   ├── useExchangeRate.ts   # Exchange rate fetching & caching
+│   └── useGoals.ts          # Goals state & localStorage
+├── types/
+│   └── goal.ts              # TypeScript interfaces
+├── pages/
+│   └── Index.tsx            # Main application page
+└── index.css                # Design system & Tailwind config
 ```
 
-**Edit a file directly in GitHub**
+## API
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Exchange rates are fetched from [exchangerate-api.com](https://www.exchangerate-api.com/). Rates are cached for 1 hour to avoid rate limits.
