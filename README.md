@@ -1,59 +1,52 @@
-# Goal-Based Savings Planner
+# My Savings Compass
 
-A beautiful, client-side web application for tracking your savings goals with real-time currency conversion between INR and USD.
+## Overview
 
-## Features
+Goal-based savings planner with progress tracking and INR/USD currency support.
 
-- **Add Savings Goals** - Create goals with name, target amount, and currency (INR/USD)
-- **Progress Tracking** - Visual progress bars showing how close you are to each goal
-- **Contributions** - Add contributions to goals with date tracking
-- **Live Exchange Rates** - Fetches real-time INR ↔ USD rates from exchangerate-api
-- **Currency Conversion** - See goal amounts converted to the alternate currency
-- **Summary Dashboard** - Overview of total targets, savings, and overall progress
-- **Persistent Storage** - All data saved in localStorage
-- **Responsive Design** - Works beautifully on desktop and mobile
+Project type: JavaScript/React application.
+
+## What This Repository Contains
+
+- `README.md`
+- `index.html`
+- `package.json`
+- `src/App.css`
+- `src/App.tsx`
+- `src/components/AddGoalForm.tsx`
+- `src/components/ContributionModal.tsx`
+- `src/components/EmptyState.tsx`
+- `src/components/GoalCard.tsx`
+- `src/components/NavLink.tsx`
+- `src/components/SummaryBanner.tsx`
+- `src/components/ui/accordion.tsx`
+- `src/components/ui/alert-dialog.tsx`
+- `src/components/ui/alert.tsx`
 
 ## Tech Stack
 
-- React 18 + TypeScript
-- Vite (build tool)
-- Tailwind CSS (styling)
-- Lucide React (icons)
+Vite/React, React, HTML/CSS
 
-## Getting Started
+## How To Run / Use
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-2. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-3. Open http://localhost:5173 in your browser
-
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── AddGoalForm.tsx      # Form to create new goals
-│   ├── ContributionModal.tsx # Modal for adding contributions
-│   ├── EmptyState.tsx       # Shown when no goals exist
-│   ├── GoalCard.tsx         # Individual goal display card
-│   └── SummaryBanner.tsx    # Top summary with totals
-├── hooks/
-│   ├── useExchangeRate.ts   # Exchange rate fetching & caching
-│   └── useGoals.ts          # Goals state & localStorage
-├── types/
-│   └── goal.ts              # TypeScript interfaces
-├── pages/
-│   └── Index.tsx            # Main application page
-└── index.css                # Design system & Tailwind config
+```bash
+npm install
+npm run dev
 ```
 
-## API
+For production validation, run:
 
-Exchange rates are fetched from [exchangerate-api.com](https://www.exchangerate-api.com/). Rates are cached for 1 hour to avoid rate limits.
+```bash
+npm run build
+```
+
+## Current Status
+
+This repository has enough structure to be understandable from the README and file layout.
+
+## Notes For Reviewers
+
+- Start with the overview and key files above.
+- If this is a notebook repository, run it in a clean Jupyter or VS Code notebook environment.
+- If this is a frontend app, run the install/build commands before judging the project.
+- Some older practice repositories are kept public for learning history, not as primary portfolio pieces.
